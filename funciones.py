@@ -341,7 +341,8 @@ def menuPrincipal():
     print("4. Reservar una habitación")
     print("5. Cambiar una reservacion")
     print("6. Cancelar una reservación")
-    print("7. Salir")
+    print("7. Mostrar clientes")
+    print("8. Salir")
     while True:
         try:
             opcion = numerico()
@@ -353,6 +354,25 @@ def menuPrincipal():
             print("Error: Debe ingresar un número válido.")
     return opcion
 
+def mostrarClientes():
+    conexion = conexionBaseDatos()
+    cursor = conexion.cursor()
+    cursor.execute("SELECT * FROM cliente")
+    reservaciones = cursor.fetchall()
+    
+    print("Clientes Registrados Hechas")
+    for reservacion in reservaciones:
+        print("\n---------------------------------------------------------------------------------")
+        print("\n   ID")
+        print ('|',reservacion, end='|')
+    print("\n---------------------------------------------------------------------------------")
+    cursor.close()
+    conexion.close()  
+
+
+    
+    
+    
 
 def acciones():
     while True:
@@ -384,6 +404,11 @@ def acciones():
             espera = input("Presiona enter para continuar")
             limpiarTerminal()
         elif opcion == 7:
+            print("Clientes registrados")
+            mostrarClientes()
+            espera = input("Presiona enter para continuar")
+            limpiarTerminal()
+        elif opcion == 8:
             print("Salir")
             break
         
