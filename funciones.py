@@ -346,7 +346,7 @@ def menuPrincipal():
     while True:
         try:
             opcion = numerico()
-            if 1 <= opcion <= 7:
+            if 1 <= opcion <= 8:
                 break
             else:
                 print("Error: El número debe estar entre 1 y 7.")
