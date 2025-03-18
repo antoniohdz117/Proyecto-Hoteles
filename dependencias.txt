@@ -1,0 +1,6 @@
+mysql-connector-python
+numpy
+pandas
+matplotlib
+random
+
