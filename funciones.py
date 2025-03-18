@@ -308,7 +308,7 @@ def cambiarReservacion():
     print('Que deseas cambiar')
     print("1) Fecha Salida")
     print("2) Estado del pago:")
-    print("3) Cliente de habitacion")
+    print("3) Cliente")
     print("4) Habitacion del cliente")
     print("5) Empleado que atendio")
     opcion = numerico()
@@ -321,10 +321,11 @@ def cambiarReservacion():
             actualizarEstado()
         case 3:
             print("Elegiste la opción 3")
-            actualizarHabitacion()
+            actualizarCliente()
+            
         case 4:
             print("Elegiste la opcion 4")
-            actualizarCliente()
+            actualizarHabitacion()
         case 5:
             print("Elegiste la opcion 5")
             actualizarEmpleado()
