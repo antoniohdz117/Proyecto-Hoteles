@@ -1,19 +1,13 @@
 import mysql.connector
 
-#funcion para la creacion de datos
-def conexionBaseDatos():
-    conexion = mysql.connector.connect(
-        host="localhost",
-        user="root", #ingrese su usuario
-        password="", #ingrese su password
-        database="hotel"
-        )
-    return conexion
-
 def creacionBaseDatos():
     try:
         # Conexión al servidor de MySQL (cambia usuario y contraseña)
-        conexion = conexionBaseDatos()
+        conexion = mysql.connector.connect(
+            host='localhost',
+            user='root',
+            password='halo 117'
+        )
         cursor = conexion.cursor()
 
         # Validar si la base de datos existe
@@ -99,6 +93,8 @@ def creacionBaseDatos():
         #iteracion para la creacion de mis tablas empezando con las padres, padres e hijos y por ultimo los hijos
         for tabla in tablas:
             cursor.execute(tabla)
+
+
         print("Carga de base de datos exitosa.")
         insercionTipoEmpleado(tipoEmpleado)
         insercionEmpleado(empleado)
@@ -106,19 +102,28 @@ def creacionBaseDatos():
         insercionHabitacion(habitacion)
         insercionCliente(cliente)
         insercionReservacion(reservacion)
-        
-        
 
     except mysql.connector.Error as error:
         print(f" Error al conectar con MySQL: {error}")
-        
 
-
+def conexionBaseDatos():
+    conexion = mysql.connector.connect(
+        host="localhost",
+        user="root", #ingrese su usuario
+        password="halo 117", #ingrese su password
+        database="hotel"
+        )
+    return conexion
+    
 #funcion para validar la existencia de la base de datos, Cree otra funcion para las pruebas unitarias del usario
 def validarExistencia(baseDatos="hotel"):
     #try para la validacion de la base de datos existente
     try:
-        conexion = conexionBaseDatos()
+        conexion = mysql.connector.connect(
+            host='localhost',
+            user='root',        #Cambiar usuario si es necesario
+            password='halo 117' #cambia tu contraseña
+        )
         #cursor para la conexion
         cursor = conexion.cursor()
 
@@ -141,8 +146,6 @@ def validarExistencia(baseDatos="hotel"):
         exit()
         return False
 
-
-#Funcion para los datos de inserccion de las tablas padre como tipoEmpleado y tipoHabitacion
 def insercionTipoEmpleado(lista):
 
 	#ESTO ME LO PUEDO AHORRAR PERO NO TUVE TIEMPO
@@ -305,5 +308,6 @@ else:
     conexion.close()
     print("Conexion establecida")
     
-    
+
+
 
