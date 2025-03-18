@@ -1,3 +1,3 @@
 import funciones
 
-funciones.acciones
+funciones.acciones()
