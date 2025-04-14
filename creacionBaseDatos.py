@@ -110,7 +110,7 @@ def conexionBaseDatos():
     conexion = mysql.connector.connect(
         host="localhost",
         user="root", #ingrese su usuario
-        password="halo 117", #ingrese su password
+        password="", #ingrese su password
         database="hotel"
         )
     return conexion
@@ -122,7 +122,7 @@ def validarExistencia(baseDatos="hotel"):
         conexion = mysql.connector.connect(
             host='localhost',
             user='root',        #Cambiar usuario si es necesario
-            password='halo 117' #cambia tu contraseña
+            password='' #cambia tu contraseña
         )
         #cursor para la conexion
         cursor = conexion.cursor()
