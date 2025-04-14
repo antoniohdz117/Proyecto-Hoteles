@@ -6,7 +6,7 @@ def creacionBaseDatos():
         conexion = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='halo 117'
+            password=''
         )
         cursor = conexion.cursor()
 
